@@ -10,6 +10,7 @@
   --tertiary-bg-color: #f5f4fa;
   --boarder-color: #eeeeee;
   --header-border-color: #ececec;
+  --icon-color:#AFB1B8;
 }
 
 body {
@@ -41,6 +42,7 @@ img {
   height: auto;
 }
 /* Шапка сайту */
+
 
 .page-header {
   border-bottom: 1px solid var(--header-border-color);
@@ -107,7 +109,10 @@ img {
 .contacts.list {
   display: flex;
   margin-left: auto;
+  align-items: center;
 }
+
+
 
 .contacts.list .link {
   display: block;
@@ -115,9 +120,29 @@ img {
   padding-bottom: 32px;
 }
 
+.contacts.list .contacts-link {
+    display: flex;
+    align-items: center;
+    fill: currentColor;
+}
+
+
 .contacts.list .list-item + .list-item {
   margin-left: 50px;
 }
+
+.mail {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+}
+
+.phone {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+}
+
 
 /* 
 .site-nav.list {
@@ -223,15 +248,14 @@ calc ((100% - кол-во маржинов в строке * значение м
 /* Головне */
 
 /* Секція: Ефективні рішення для вашого бізнесу */
-.main-section {
-  padding-top: 200px;
-  padding-bottom: 200px;
+.section.main-section {
+  padding: 200px 0;
 
   background-color: var(--secondary-bg-color);
   text-align: center;
   margin-top: 0;
 
-  min-width: 1600px;
+  max-width: 1600px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -246,6 +270,15 @@ calc ((100% - кол-во маржинов в строке * значение м
   background-position: center;
 }
 
+/* .main-section {
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background-color: var(--secondary-bg-color);
+    text-align: center;
+    margin-top: 0;
+
+} */
 
 /* Overlay
           .overlay {
@@ -261,7 +294,8 @@ calc ((100% - кол-во маржинов в строке * значение м
           }
  */
 .main-title {
-  margin-top: 0;
+  margin: 0 auto;
+  width: 695px;
   margin-bottom: 30px;
 
   color: var(--white-color);
@@ -326,18 +360,23 @@ calc ((100% - кол-во маржинов в строке * значение м
   margin-right: 30px;
 }
 
-.advantages-list .list-item::before {
-  display: block;
-  content: '';
-  height: 120px;
-  background-color: var(--tertiary-bg-color);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 4px;
-  margin-bottom: 30px;
+.icon-div {
+    width: 270px;
+    height: 120px;
+    padding: 25px 100px;
+    background-color: var(--tertiary-bg-color);
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+
 }
 
+.svg-item {
+    display: block;
+    width: 70px;
+    height: 70px;
+    
+}
 
 /* Еще вариант: 
     .advantages-list .list-item:nth-child(1)::before{
@@ -426,8 +465,9 @@ calc ((100% - кол-во маржинов в строке * значение м
 
 .team-position {
   color: var(--primary-text-color);
-  line-height: 1.2;
+  line-height: 1.19;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .team-content {
@@ -435,6 +475,74 @@ calc ((100% - кол-во маржинов в строке * значение м
   padding-bottom: 30px;
   padding-left: auto;
   padding-right: auto;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+
+}
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--icon-color);
+}
+
+.social-list-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+/* Секція "Постійні клієнти" */
+
+
+.client-link {
+    width: 170px;
+    height: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--icon-color);
+    border-radius: 4px;
+    background-color: var(--common-white);
+    color: var(--icon-color);
+}
+
+.clients-title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.17;
+    margin-bottom: 50px;
+}
+
+.client-list {
+    display: flex;
+    gap:30px;
+}
+
+.client-logo {
+    width: 106px;
+    height: 60px;
+    fill: currentColor;
+}
+
+.client-link:hover,
+.client-link:focus {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 /* Підвал */
@@ -493,9 +601,37 @@ address {
   line-height: 1.7;
 }
 
+/*  "Приєднуйтесь" Соціальні мережі в футері */
+
+.social-list-title {
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+
+.footer-link {
+    background: rgba(255, 255, 255, 0.1);;
+}
+
+.footer-icon {
+    fill: var(--white-color);
+}
+
+.container.logo-address {
+    margin-right: 70px;
+}
+
 /* 
-
-
 .social-media.list-item {
     display: inline-block;
     height: 44px;
@@ -584,8 +720,15 @@ address {
     margin-bottom: 30px;
 }    */
 
-.projects-list .link {
-  text-decoration: none;
+
+.project-link {
+    display: block;
+    text-decoration: none;
+} 
+
+.project-link:hover,
+.project-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .projects-list .name {
@@ -615,10 +758,8 @@ address {
 
 .container {
   width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .section {
